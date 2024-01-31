@@ -100,7 +100,7 @@ reboot
 systemctl enable NetworkManager
 systemctl start NetworkManager
 
-
+nmcli dev wifi connect <> password <password>
 
 ```
 
