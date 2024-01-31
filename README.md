@@ -37,8 +37,20 @@ btrfs subvolume create /mnt/@tmp
 chattr +C /mnt/@cache
 chattr +C /mnt/@log
 
+umount /mnt
+mount -o noatime,nodiratime,ssd,compress=lzo,subvol=@ /dev/nvme0n1p2 /mnt
 
+# zsh增加了一个逗号，不要用空格
+mkdir -p /mnt/{boot/efi,home,data,root,var/{log,cache,}}
 
+mount -o noatime,nodiratime,ssd,compress=lzo,subvol=@log /dev/nvme0n1p2 /mnt/var/log
+mount -o noatime,nodiratime,ssd,compress=lzo,subvol=@cache /dev/nvme0n1p2 /mnt/var/cache
+
+mount -o noatime,nodiratime,ssd,compress=lzo /dev/nvme0n1p3 /mnt/root
+mount -o noatime,nodiratime,ssd,compress=lzo /dev/nvme0n1p4 /mnt/home
+mount -o noatime,nodiratime,ssd,compress=lzo /dev/nvme0n1p5 /mnt/data
+
+mount /dev/nvme0n1p1 /mnt/boot/efi
 ```
 
 
