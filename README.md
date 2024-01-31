@@ -110,6 +110,9 @@ xrandr --output eDP-1 --mode aaaxbbb --rate 120 --scale 0.5x0.5
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
+
+paru google-chrome-stable
+paru visual-studio-code-bin
 ```
 
 
