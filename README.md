@@ -114,6 +114,10 @@ makepkg -si
 paru google-chrome-stable
 paru visual-studio-code-bin
 pacman -Sy openssh
+
+rofi
+r键盘绑定
+
 ```
 
 
