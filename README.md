@@ -51,6 +51,26 @@ mount -o noatime,nodiratime,ssd,compress=lzo /dev/nvme0n1p4 /mnt/home
 mount -o noatime,nodiratime,ssd,compress=lzo /dev/nvme0n1p5 /mnt/data
 
 mount /dev/nvme0n1p1 /mnt/boot/efi
+
+
+iwctl
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect wifi-name
+exit
+
+timedatectl set-ntp true
+timedatectl status
+
+
+vim /etc/pacman.conf
+ParallelDownloads = 5
+
+
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git iw
+
+
 ```
 
 
