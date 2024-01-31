@@ -66,7 +66,7 @@ vim /etc/pacman.conf
 ParallelDownloads = 5
 
 pacman -Sy archlinux-keyring # 镜像老了（该换新的了
-pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git iw sudo
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo
 
 genfstab -L /mnt >> /mnt/etc/fstab
 
@@ -95,6 +95,11 @@ pacman -S grub efibootmgr
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
+reboot
+
+systemctl enable NetworkManager
+systemctl start NetworkManager
+
 
 
 ```
