@@ -67,9 +67,36 @@ timedatectl status
 vim /etc/pacman.conf
 ParallelDownloads = 5
 
-
+pacman -Sy archlinux-keyring # 镜像老了（该换新的了
 pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git iw
 
+genfstab -L /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc
+
+vim /etc/locale.gen
+# uncomment /etc/locale.gen
+
+locale-gen
+
+vim /etc/hostname
+# superyoko
+
+passwd
+
+useradd -m -G wheel yoko
+passwd yoko
+
+vim /etc/sudoers
+# enable sudoer # uncomment wheel line
+
+pacman -S intel-ucode
+pacman -S grub efibootmgr
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
