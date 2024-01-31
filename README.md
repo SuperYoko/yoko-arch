@@ -107,7 +107,9 @@ pacman -S xorg xorg-xinit xorg-server awesome
 pacman -S terminus-font
 vim ~/.xinitrc
 xrandr --output eDP-1 --mode aaaxbbb --rate 120 --scale 0.5x0.5
-
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 ```
 
 
