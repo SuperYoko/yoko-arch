@@ -102,9 +102,11 @@ systemctl start NetworkManager
 
 nmcli dev wifi connect <> password <password>
 
-pacman -S xorg xorg-xinit awesome
+pacman -S xorg xorg-xinit xorg-server awesome
 
 pacman -S terminus-font
+vim ~/.xinitrc
+xrandr --output eDP-1 --mode aaaxbbb --rate 120 --scale 0.5x0.5
 
 ```
 
