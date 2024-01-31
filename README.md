@@ -98,6 +98,11 @@ pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
+vim /etc/mkinitcpio.conf
+添加 btrfs 到 MODULES=(...)行
+找到 HOOKS=(...)行，更换fsck为btrfs
+最终你看到的/etc/mkinitcpio.conf文件格式为
+
 ```
 
 
