@@ -102,7 +102,9 @@ systemctl start NetworkManager
 
 nmcli dev wifi connect <> password <password>
 
-pacman -S xorg xorg-xinit awesome 
+pacman -S xorg xorg-xinit awesome
+
+pacman -S terminus-font
 
 ```
 
