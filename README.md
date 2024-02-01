@@ -118,6 +118,8 @@ cd paru
 makepkg -si
 
 paru google-chrome-stable
+sudo pacman -S noto-fonts inter-font noto-fonts-cjk noto-fonts-emoji ttf-sarasa-gothic
+
 paru visual-studio-code-bin
 pacman -Sy openssh
 
