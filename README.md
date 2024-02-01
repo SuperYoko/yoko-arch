@@ -102,6 +102,7 @@ systemctl start NetworkManager
 
 nmcli dev wifi connect <> password <password>
 
+pacman -S xf86-video-intel 
 pacman -S xorg xorg-xinit xorg-server
 
 pacman -S terminus-font
@@ -122,7 +123,12 @@ pacman -Sy openssh
 
 rofi
 r键盘绑定
+
+set $alt Mod1
+bindsym $alt+F4 kill
 bindsym $mod+r  exec rofi -show drun
+
+paru i3lock-color
 
 
 
