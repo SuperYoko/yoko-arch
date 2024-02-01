@@ -117,6 +117,11 @@ root btrfs subvolume snapshot / backupname
 
 pacman -S hyprland
 Hyprland
+
+rofi
+配置rofi
+
+pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel opencl-mesa lib32-opencl-mesa opencl-headers
 ```
 
 
