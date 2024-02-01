@@ -102,38 +102,6 @@ systemctl start NetworkManager
 
 nmcli dev wifi connect <> password <password>
 
-pacman -S xf86-video-intel 
-pacman -S xorg xorg-xinit xorg-server
-
-pacman -S terminus-font
-
-
-sudo pacman -S xorg lightdm lightdm-gtk-greeter i3-wm i3status i3blocks terminator
-vim ~/.config/i3/config
-
-exec_always xrandr --output eDP-1 --mode aaaxbbb --rate 120 --scale 0.5x0.5
-
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-
-paru google-chrome-stable
-sudo pacman -S noto-fonts inter-font noto-fonts-cjk noto-fonts-emoji ttf-sarasa-gothic
-
-paru visual-studio-code-bin
-pacman -Sy openssh
-
-rofi
-r键盘绑定
-
-set $alt Mod1
-bindsym $alt+F4 kill
-bindsym $mod+r  exec rofi -show drun
-
-paru i3lock-color
-
-
-
 ```
 
 
