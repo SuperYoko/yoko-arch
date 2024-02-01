@@ -121,7 +121,10 @@ Hyprland
 rofi
 配置rofi
 
-pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel opencl-mesa lib32-opencl-mesa opencl-headers
+pacman -S mesa xf86-video-intel vulkan-intel
+
+sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji
+
 ```
 
 
