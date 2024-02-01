@@ -102,6 +102,10 @@ systemctl start NetworkManager
 
 nmcli dev wifi connect <> password <password>
 
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
 ```
 
 
