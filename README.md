@@ -102,11 +102,16 @@ systemctl start NetworkManager
 
 nmcli dev wifi connect <> password <password>
 
-pacman -S xorg xorg-xinit xorg-server awesome
+pacman -S xorg xorg-xinit xorg-server
 
 pacman -S terminus-font
-vim ~/.xinitrc
-xrandr --output eDP-1 --mode aaaxbbb --rate 120 --scale 0.5x0.5
+
+
+sudo pacman -S xorg lightdm lightdm-gtk-greeter i3-wm i3status i3blocks terminator
+vim ~/.config/i3/config
+
+exec_always xrandr --output eDP-1 --mode aaaxbbb --rate 120 --scale 0.5x0.5
+
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
@@ -117,6 +122,9 @@ pacman -Sy openssh
 
 rofi
 r键盘绑定
+bindsym $mod+r  exec rofi -show drun
+
+
 
 ```
 
