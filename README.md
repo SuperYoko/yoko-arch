@@ -66,7 +66,7 @@ vim /etc/pacman.conf
 ParallelDownloads = 5
 
 pacman -Sy archlinux-keyring # 镜像老了（该换新的了
-pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo btrfs-progs
 
 genfstab -L /mnt >> /mnt/etc/fstab
 
