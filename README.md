@@ -114,6 +114,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 chsh -s /usr/bin/zsh
 
 root btrfs subvolume snapshot / backupname
+
+pacman -S hyprland
+Hyprland
 ```
 
 
