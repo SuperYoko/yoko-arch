@@ -148,6 +148,10 @@ sudo pacman -S  wqy-zenhei
 #sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 安装几个开源中文字体。一般装上文泉驿就能解决大多 wine 应用中文方块的问题
 #sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra # 安装谷歌开源字体及表情
 
+bind = , xf86audioraisevolume, exec, amixer set Master 5%+ # 调大音量
+bind = , xf86audiolowervolume, exec, amixer set Master 5%- # 调小音量
+bind = , xf86monbrightnessdown, exec, brightnessctl set 5%- # 调高亮度
+bind = , xf86monbrightnessup, exec, brightnessctl set 5%+ # 调低亮度
 ```
 
 
