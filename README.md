@@ -132,8 +132,22 @@ systemctl enable gdm
 
 paru google-chrome
 paru visual-studio-code
-
 ssh-keygen -t RSA -C "xx"
+
+
+linuxqq
+xray
+v2raya
+配置内核
+
+谷歌账号同步
+
+====创建快照====
+sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf # 声音固件
+sudo pacman -S  wqy-zenhei
+#sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 安装几个开源中文字体。一般装上文泉驿就能解决大多 wine 应用中文方块的问题
+#sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra # 安装谷歌开源字体及表情
+
 ```
 
 
