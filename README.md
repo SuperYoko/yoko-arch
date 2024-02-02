@@ -66,7 +66,7 @@ vim /etc/pacman.conf
 ParallelDownloads = 5
 
 pacman -Sy archlinux-keyring # 镜像老了（该换新的了
-pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo btrfs-progs
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo btrfs-progs openssh
 
 genfstab -L /mnt >> /mnt/etc/fstab
 
@@ -127,6 +127,13 @@ sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts 
 
 sudo pacman -S gdm
 systemctl enable gdm
+
+// 备份hyprland配置
+
+paru google-chrome
+paru visual-studio-code
+
+ssh-keygen -t RSA -C "xx"
 ```
 
 
