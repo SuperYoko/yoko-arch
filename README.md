@@ -168,6 +168,14 @@ bind = , xf86monbrightnessup, exec, brightnessctl set 5%+ # 调低亮度
 sudo pacman -S intel-media-driver
 驱动浏览器加速 https://xland.cyou/p/arch-linux-configuration-driver-and-software/
 
+sudo pacman -S fctix5 fctix5-im fcitx5-chinese-addons
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus
+
 ```
 
 
