@@ -179,6 +179,37 @@ SDL_IM_MODULE=fcitx
 
 exec-once=fcitx5 --replace -d
 
+sudo pacman -S fctix5-im fcitx5-chinese-addons
+
+
+
+第一次运行要取消勾选 Input Method页的 Only show current language,然后找到 Pin Yin ，双击添加
+
+切换输入法默认为 ctrl+空格
+
+
+
+~/.config/hyprland/hyprland.conf 添加 exec-once = fcitx5 -d
+
+
+
+~/.bashrc 添加
+
+export GTK_IM_MODULE=fcitx
+
+export QT_IM_MODULE=fcitx
+
+export XMODIFIERS=@im=fcitx
+
+
+
+设置输入框的DPI: 
+
+1. fcitx5-configtool->Addons -> Classic User Interface -> ✅ Use Per Screen DPI
+
+    fcitx5-configtool->Addons -> Classic User Interface -> Force Font DPI on Wayland 144
+
+
 ```
 
 
