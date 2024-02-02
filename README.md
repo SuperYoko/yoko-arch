@@ -126,6 +126,7 @@ pacman -S mesa xf86-video-intel vulkan-intel
 sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji
 
 sudo pacman -S gdm
+systemctl enable gdm
 ```
 
 
