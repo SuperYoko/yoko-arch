@@ -176,7 +176,8 @@ GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
-GLFW_IM_MODULE=ibus
+
+exec-once=fcitx5 --replace -d
 
 ```
 
