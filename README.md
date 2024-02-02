@@ -170,6 +170,8 @@ sudo pacman -S intel-media-driver
 
 sudo pacman -S fctix5 fctix5-im fcitx5-chinese-addons
 
+/etc/environment
+
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
