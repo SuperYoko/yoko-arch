@@ -155,6 +155,15 @@ bind = , xf86monbrightnessup, exec, brightnessctl set 5%+ # 调低亮度
 
 waybar
 以及字体
+
+sudo pacman -S wget
+https://github.com/Alexays/Waybar/wiki/Examples
+
+配置壁纸
+hyprpaper
+
+sudo pacman -S libva-mesa-driver
+
 ```
 
 
