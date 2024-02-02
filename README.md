@@ -152,6 +152,9 @@ bind = , xf86audioraisevolume, exec, amixer set Master 5%+ # 调大音量
 bind = , xf86audiolowervolume, exec, amixer set Master 5%- # 调小音量
 bind = , xf86monbrightnessdown, exec, brightnessctl set 5%- # 调高亮度
 bind = , xf86monbrightnessup, exec, brightnessctl set 5%+ # 调低亮度
+
+waybar
+以及字体
 ```
 
 
