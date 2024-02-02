@@ -165,6 +165,9 @@ bind = , xf86audiolowervolume, exec, amixer set Master 5%- # 调小音量
 bind = , xf86monbrightnessdown, exec, brightnessctl set 5%- # 调高亮度
 bind = , xf86monbrightnessup, exec, brightnessctl set 5%+ # 调低亮度
 
+sudo pacman -S intel-media-driver
+驱动浏览器加速 https://xland.cyou/p/arch-linux-configuration-driver-and-software/
+
 ```
 
 
