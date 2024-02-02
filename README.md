@@ -209,6 +209,7 @@ export XMODIFIERS=@im=fcitx
 
     fcitx5-configtool->Addons -> Classic User Interface -> Force Font DPI on Wayland 144
 
+发现 Google Chrome 也很模糊？你也可以修复它，只是用不同的方式。只需在新选项卡中打开 chrome://flags/#ozone-platform-hint，将其设置为“自动”，然后重新启动即可。
 
 ```
 
