@@ -152,6 +152,7 @@ sudo pacman -S fcitx5-chinese-addons
 /// === snap002 
 
 
+sudo pacman -S mesa vulkan-intel intel-media-driver
 pacman -S mesa xf86-video-intel vulkan-intel
 
 
