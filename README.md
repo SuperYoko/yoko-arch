@@ -122,105 +122,35 @@ chsh -s /usr/bin/zsh
 
 chown -R owner_name folder_name
 
+sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+sudo pacman -S  wqy-zenhei
+sudo pacman -S ibus-pinyin
+
+
+
+sudo pacman -S gnome
+sudo systemctl enable --now gdm
+
+export https_proxy=http://xx.xx.
+paru google-chrome
+paru visual-studio-code
+linuxqq
+
+
+xray
+v2raya
+
 /// === xx
 
 
-pacman -S hyprland
-Hyprland
-
-rofi
-配置rofi
-
 pacman -S mesa xf86-video-intel vulkan-intel
 
-sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji
 
-sudo pacman -S gdm
-systemctl enable gdm
-
-// 备份hyprland配置
-
-paru google-chrome
-paru visual-studio-code
-ssh-keygen -t RSA -C "xx"
-
-
-linuxqq
-xray
-v2raya
-配置内核
-
-谷歌账号同步
 
 ====创建快照====
 sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf alsa-utils # 声音固件
-sudo pacman -S  wqy-zenhei
+
 #sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 安装几个开源中文字体。一般装上文泉驿就能解决大多 wine 应用中文方块的问题
-#sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra # 安装谷歌开源字体及表情
-
-
-waybar
-以及字体
-
-sudo pacman -S wget
-https://github.com/Alexays/Waybar/wiki/Examples
-
-配置壁纸
-hyprpaper
-sudo pacman -S mako
-
-+ alsa-utils brightnessctl
-bind = , xf86audioraisevolume, exec, amixer set Master 5%+ # 调大音量
-bind = , xf86audiolowervolume, exec, amixer set Master 5%- # 调小音量
-bind = , xf86monbrightnessdown, exec, brightnessctl set 5%- # 调高亮度
-bind = , xf86monbrightnessup, exec, brightnessctl set 5%+ # 调低亮度
-
-sudo pacman -S intel-media-driver
-驱动浏览器加速 https://xland.cyou/p/arch-linux-configuration-driver-and-software/
-
-sudo pacman -S fctix5 fctix5-im fcitx5-chinese-addons
-
-/etc/environment
-
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
-SDL_IM_MODULE=fcitx
-
-exec-once=fcitx5 --replace -d
-
-sudo pacman -S fctix5-im fcitx5-chinese-addons
-
-
-
-第一次运行要取消勾选 Input Method页的 Only show current language,然后找到 Pin Yin ，双击添加
-
-切换输入法默认为 ctrl+空格
-
-
-
-~/.config/hyprland/hyprland.conf 添加 exec-once = fcitx5 -d
-
-
-
-~/.bashrc 添加
-
-export GTK_IM_MODULE=fcitx
-
-export QT_IM_MODULE=fcitx
-
-export XMODIFIERS=@im=fcitx
-
-
-
-设置输入框的DPI: 
-
-1. fcitx5-configtool->Addons -> Classic User Interface -> ✅ Use Per Screen DPI
-
-    fcitx5-configtool->Addons -> Classic User Interface -> Force Font DPI on Wayland 144
-
-发现 Google Chrome 也很模糊？你也可以修复它，只是用不同的方式。只需在新选项卡中打开 chrome://flags/#ozone-platform-hint，将其设置为“自动”，然后重新启动即可。
-
-```
+#sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji  # 安装谷歌开源字体及表情
 
 
