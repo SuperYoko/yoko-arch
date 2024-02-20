@@ -13,7 +13,9 @@ restofall data /data
 fdisk /dev/nvme0n1
 g 
 n +1G
-n +300G 
+n +300G
+n +32G swap
+n +50 /backup
 n all
 t 1
 w
@@ -22,15 +24,15 @@ q
 mkfs.fat -F32 /dev/nvme0n1p1
 // Just not put all eggs into btrfs
 mkfs.btrfs /dev/nvmen1p2
-mkfs.ext4  /dev/nvmen1p3
+mkswap  /dev/nvmen1p3
+mkfs.btrfs /dev/nvmen1p4
+mkfs.ext4  /dev/nvmen1p5
 
 mount -t btrfs /dev/nvme0n1p2 /mnt
 
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@cache
 btrfs subvolume create /mnt/@log
-btrfs subvolume create /mnt/@tmp
-btrfs subvolume create /mnt/@root
 btrfs subvolume create /mnt/@home
 
 
@@ -41,13 +43,13 @@ umount /mnt
 mount -t btrfs -o noatime,nodiratime,ssd,subvol=@ /dev/nvme0n1p2 /mnt
 
 # zsh增加了一个逗号，不要用空格
-mkdir -p /mnt/{boot/efi,home,data,root,var/{log,cache,}}
+mkdir -p /mnt/{boot/efi,backup,home,data,var/{log,cache,}}
 
 mount -t btrfs -o noatime,nodiratime,ssd,subvol=@log /dev/nvme0n1p2 /mnt/var/log
 mount -t btrfs -o noatime,nodiratime,ssd,subvol=@cache /dev/nvme0n1p2 /mnt/var/cache
-mount -t btrfs -o noatime,nodiratime,ssd subvol=@root /dev/nvme0n1p2 /mnt/root
 mount -t btrfs -o noatime,nodiratime,ssd,subvol=@home /dev/nvme0n1p2 /mnt/home
-mount /dev/nvme0n1p3 /mnt/data
+mount /dev/nvme0n1p4 /mnt/backup
+mount /dev/nvme0n1p5 /mnt/data
 mount /dev/nvme0n1p1 /mnt/boot/efi
 
 
@@ -66,7 +68,7 @@ vim /etc/pacman.conf
 ParallelDownloads = 5
 
 pacman -Sy archlinux-keyring # 镜像老了（该换新的了
-pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo btrfs-progs openssh
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim reflector git networkmanager sudo btrfs-progs openssh intel-ucode efibootmgr
 
 genfstab -L /mnt >> /mnt/etc/fstab
 
@@ -76,6 +78,7 @@ hwclock --systohc
 
 vim /etc/locale.gen
 # uncomment /etc/locale.gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 locale-gen
 
@@ -90,8 +93,8 @@ passwd yoko
 vim /etc/sudoers
 # enable sudoer # uncomment wheel line
 
-pacman -S intel-ucode
-pacman -S grub efibootmgr
+mkinitcpio -p linux
+
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -105,6 +108,10 @@ nmcli dev wifi connect <> password <password>
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
+btrfs
+
+sudo btrfs subvolume snapshot -r / /.snap001
+=== snapshot 001
 
 zsh
 sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions
@@ -113,7 +120,10 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 chsh -s /usr/bin/zsh
 
-root btrfs subvolume snapshot / backupname
+chown -R owner_name folder_name
+
+/// === xx
+
 
 pacman -S hyprland
 Hyprland
