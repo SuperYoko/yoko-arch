@@ -160,7 +160,3 @@ pacman -S mesa xf86-video-intel vulkan-intel
 ====创建快照====
 sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf alsa-utils # 声音固件
 
-#sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 安装几个开源中文字体。一般装上文泉驿就能解决大多 wine 应用中文方块的问题
-#sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji  # 安装谷歌开源字体及表情
-
-
