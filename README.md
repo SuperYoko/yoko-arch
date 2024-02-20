@@ -124,9 +124,6 @@ chown -R owner_name folder_name
 
 sudo pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 sudo pacman -S  wqy-zenhei
-sudo pacman -S ibus-pinyin
-
-
 
 sudo pacman -S gnome
 sudo systemctl enable --now gdm
@@ -136,11 +133,23 @@ paru google-chrome
 paru visual-studio-code
 linuxqq
 
-
 xray
 v2raya
+systemd 管理的 v2rayA#
+使用 apt 等包管理器，或直接使用安装包进行安装的，一般都为这种方式。
 
-/// === xx
+新建文件夹 /etc/systemd/system/v2raya.service.d，然后新建一个 xray.conf 的文件，添加以下内容：
+
+[Service]
+Environment="V2RAYA_V2RAY_BIN=/usr/local/bin/xray"
+注意检查 Xray 的路径是否正确。
+
+重载服务：
+
+sudo systemctl daemon-reload && sudo systemctl restart v2raya
+sudo pacman -S fcitx5-im 
+sudo pacman -S fcitx5-chinese-addons
+/// === snap002 
 
 
 pacman -S mesa xf86-video-intel vulkan-intel
