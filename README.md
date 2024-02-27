@@ -163,5 +163,5 @@ sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf alsa-utils # 声音固�
 
 ## desktop
 sudo pacman -S gnome-browser-connector
-
-
+全屏幕自动工作区，助你轻扫切换
+https://extensions.gnome.org/extension/6072/fullscreen-to-empty-workspace/
