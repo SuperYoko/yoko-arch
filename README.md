@@ -162,5 +162,6 @@ sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf alsa-utils # 声音固�
 ```
 
 ## desktop
+sudo pacman -S gnome-browser-connector
 
 
