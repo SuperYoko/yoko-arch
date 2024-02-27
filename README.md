@@ -159,4 +159,8 @@ pacman -S mesa xf86-video-intel vulkan-intel
 
 ====创建快照====
 sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf alsa-utils # 声音固件
+```
+
+## desktop
+
 
